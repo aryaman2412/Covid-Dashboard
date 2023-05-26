@@ -1,0 +1,142 @@
+<%- include("header") -%>
+    <link rel="stylesheet" href="css/styles.css">
+
+    <body id="livecases">
+        <div class="navigation">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand heading" style="font-size: 140% ;" href="/"><span style="color:red">Covid-19</span></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+
+                            <li class="nav-item">
+                                <a class="nav-link active" href="/tracker">Tracker</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- Heading Section Starts -->
+        <section id="trackerheading">
+            <h1 class="theading"><span style="color:red"><u>Total Cases in India</u></span></h1>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-2">
+
+                    </div>
+                    <div class="col-lg-2 tcol1">
+                        <h3><span style="color:red">Total Cases</span></h3>
+                        <p class="tcases">
+                            <span style="color:red"> <%= Confirmed %> </span>
+                        </p>
+                    </div>
+                    <div class="col-lg-2 tcol2">
+                        <h3><span style="color: #125D98">Active</span></h3>
+                        <p class="tcases">
+                            <span style="color: #125D98"><%= Active %></span>
+                        </p>
+                    </div>
+                    <div class="col-lg-2 tcol3">
+                        <h3><span style="color: black">Deceased</span></h3>
+                        <p class="tcases">
+                            <span style="color: black"> <%= Deceased %></span>
+                        </p>
+                    </div>
+                    <div class="col-lg-2 tcol4">
+                        <h3><span style="color:green">Recovered</span></h3>
+                        <p class="tcases">
+                            <span style="color:green"><%= Recovered %></span>
+                        </p>
+                    </div>
+                    <div class="col-lg-4">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Heading Section Ends -->
+        <!-- StateWise Section Starts -->
+        <section id="state">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-1">
+                    </div>
+                    <div class="col-lg-2 stateheading">
+                        <h1>States/UT</h1>
+                    </div>
+                    <div class="col-lg-2 stateheading">
+                        <h1>Total Cases</h1>
+                    </div>
+                    <div class="col-lg-2 stateheading">
+                        <h1>Active</h1>
+                    </div>
+                    <div class="col-lg-2 stateheading">
+                        <h1>Deceased</h1>
+                    </div>
+                    <div class="col-lg-2 stateheading">
+                        <h1>Recovered</h1>
+                    </div>
+                    <div class="col-lg-1 ">
+                    </div>
+                </div>
+            </div>
+            <% for(var i=0;i<State.length-1;i++){ %>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-1">
+                        </div>
+                        <div class="col-lg-2">
+                            <p>
+                                <%= State[i] %>
+                            </p>
+                        </div>
+                        <div class="col-lg-2">
+                            <p>
+                                <%= Confirm1[i] %>
+                            </p>
+                        </div>
+                        <div class="col-lg-2">
+                            <p>
+                                <%= Active1[i] %>
+                            </p>
+                        </div>
+                        <div class="col-lg-2">
+                            <p>
+                                <%= Death1[i] %>
+                            </p>
+                        </div>
+                        <div class="col-lg-2">
+                            <p>
+                                <%= Recovered1[i] %>
+                            </p>
+                        </div>
+                        <div class="col-lg-1">
+                        </div>
+                    </div>
+                </div>
+                <%  } %>
+
+                    <div><img id="svg" style="text-align: left;" src="/images/undraw_Growing_re_olpi.svg" alt=""></div>
+                    </div>
+
+
+
+
+
+
+        </section>
+
+
+
+    </body>
+
+
+
+
+
+
+
+    <%- include("footer") -%>
